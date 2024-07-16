@@ -10,6 +10,7 @@ import ru.gb.timesheet.entity.Timesheet;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
@@ -43,7 +44,7 @@ public class TimesheetController {
             return ResponseEntity.status(HttpStatus.OK).body(ts.get());
         }
 
-        return ResponseEntity.notFound().build();
+        throw new NoSuchElementException();
     }
 
     @GetMapping // получить все
@@ -55,7 +56,7 @@ public class TimesheetController {
 
             List<Timesheet> timesheetsAfter = timesheetService.getCreatedAfter(createdAfter);
 
-            if (timesheetsAfter.isEmpty()) return ResponseEntity.noContent().build();
+            if (timesheetsAfter.isEmpty()) throw new NoSuchElementException();
             return ResponseEntity.status(HttpStatus.OK).body(timesheetsAfter);
         }
 
@@ -64,7 +65,7 @@ public class TimesheetController {
 
             List<Timesheet> timesheetsBefore = timesheetService.getCreatedBefore(createdBefore);
 
-            if (timesheetsBefore.isEmpty()) return ResponseEntity.noContent().build();
+            if (timesheetsBefore.isEmpty()) throw new NoSuchElementException();
             return ResponseEntity.status(HttpStatus.OK).body(timesheetsBefore);
         }
 
@@ -75,7 +76,7 @@ public class TimesheetController {
     public ResponseEntity<Timesheet> create(@RequestBody Timesheet timesheet) {
         timesheet = timesheetService.create(timesheet);
 
-        if (timesheet == null) return ResponseEntity.notFound().build();
+        if (timesheet == null) throw new NoSuchElementException();
 
         return ResponseEntity.status(HttpStatus.CREATED).body(timesheet);
     }

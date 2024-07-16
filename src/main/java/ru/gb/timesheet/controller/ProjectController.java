@@ -8,6 +8,7 @@ import ru.gb.timesheet.entity.Timesheet;
 import ru.gb.timesheet.service.ProjectService;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
@@ -25,7 +26,7 @@ public class ProjectController {
         Optional<Project> project = service.getById(id);
 
         if (project.isPresent()) return ResponseEntity.status(HttpStatus.OK).body(project.get());
-        return ResponseEntity.notFound().build();
+        throw new NoSuchElementException();
     }
 
     @GetMapping
@@ -35,7 +36,7 @@ public class ProjectController {
 
     @GetMapping("/{id}/timesheets")
     public ResponseEntity<List<Timesheet>> getTimesheets(@PathVariable Long id) {
-        if (service.getTimesheets(id).isEmpty()) return ResponseEntity.noContent().build();
+        if (service.getTimesheets(id).isEmpty()) throw new NoSuchElementException();
         return ResponseEntity.status(HttpStatus.OK).body(service.getTimesheets(id));
     }
 
@@ -50,6 +51,6 @@ public class ProjectController {
     public ResponseEntity<Void> delete(@PathVariable Long id) {
         service.delete(id);
 
-        return ResponseEntity.noContent().build();
+        throw new NoSuchElementException();
     }
 }
