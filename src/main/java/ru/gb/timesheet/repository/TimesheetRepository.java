@@ -1,7 +1,7 @@
-package ru.gb.homework.hw_3.repository;
+package ru.gb.timesheet.repository;
 
 import org.springframework.stereotype.Repository;
-import ru.gb.homework.hw_3.entity.Timesheet;
+import ru.gb.timesheet.entity.Timesheet;
 
 import java.time.LocalDate;
 import java.util.*;

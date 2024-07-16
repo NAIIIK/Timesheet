@@ -1,8 +1,8 @@
-package ru.gb.homework.hw_3.repository;
+package ru.gb.timesheet.repository;
 
 import org.springframework.stereotype.Repository;
-import ru.gb.homework.hw_3.entity.Project;
-import ru.gb.homework.hw_3.entity.Timesheet;
+import ru.gb.timesheet.entity.Project;
+import ru.gb.timesheet.entity.Timesheet;
 
 import java.util.ArrayList;
 import java.util.List;

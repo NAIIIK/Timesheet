@@ -1,4 +1,4 @@
-package ru.gb.homework.hw_3.entity;
+package ru.gb.timesheet.entity;
 
 import lombok.Data;
 

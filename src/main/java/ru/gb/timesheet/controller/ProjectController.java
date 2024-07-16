@@ -1,11 +1,11 @@
-package ru.gb.homework.hw_3.controller;
+package ru.gb.timesheet.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.gb.homework.hw_3.entity.Project;
-import ru.gb.homework.hw_3.entity.Timesheet;
-import ru.gb.homework.hw_3.service.ProjectService;
+import ru.gb.timesheet.entity.Project;
+import ru.gb.timesheet.entity.Timesheet;
+import ru.gb.timesheet.service.ProjectService;
 
 import java.util.List;
 import java.util.Optional;

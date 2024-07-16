@@ -1,9 +1,9 @@
-package ru.gb.homework.hw_3.service;
+package ru.gb.timesheet.service;
 
 import org.springframework.stereotype.Service;
-import ru.gb.homework.hw_3.entity.Project;
-import ru.gb.homework.hw_3.entity.Timesheet;
-import ru.gb.homework.hw_3.repository.ProjectRepository;
+import ru.gb.timesheet.entity.Project;
+import ru.gb.timesheet.entity.Timesheet;
+import ru.gb.timesheet.repository.ProjectRepository;
 
 import java.util.List;
 import java.util.Optional;

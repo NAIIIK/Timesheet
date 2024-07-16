@@ -1,11 +1,11 @@
-package ru.gb.homework.hw_3.service;
+package ru.gb.timesheet.service;
 
 
 import org.springframework.stereotype.Service;
-import ru.gb.homework.hw_3.entity.Project;
-import ru.gb.homework.hw_3.entity.Timesheet;
-import ru.gb.homework.hw_3.repository.ProjectRepository;
-import ru.gb.homework.hw_3.repository.TimesheetRepository;
+import ru.gb.timesheet.entity.Project;
+import ru.gb.timesheet.entity.Timesheet;
+import ru.gb.timesheet.repository.ProjectRepository;
+import ru.gb.timesheet.repository.TimesheetRepository;
 
 import java.time.LocalDate;
 import java.util.List;
