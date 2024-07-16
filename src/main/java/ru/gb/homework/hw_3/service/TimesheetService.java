@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class TimesheetService {
     private final TimesheetRepository repository;
-    private ProjectRepository projectRepository;
+    private final ProjectRepository projectRepository;
 
     public TimesheetService(TimesheetRepository repository, ProjectRepository projectRepository) {
         this.repository = repository;
